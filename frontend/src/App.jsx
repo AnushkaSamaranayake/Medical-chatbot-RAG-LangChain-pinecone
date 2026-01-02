@@ -147,15 +147,27 @@ async function callChatApi({ message, thread }) {
   // const data = await res.json();
   // return data.reply;
 
+  console.log("API call with message:", message);
+  console.log("Thread:", thread);
+  const res = await fetch("http://127.0.0.1:5000/chat", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ message }),
+  });
+  const data = await res.json();
+  return data.answer;
+
   // Demo response (no backend)
-  await new Promise((r) => setTimeout(r, 650));
-  return (
-    "Thanks — I can help with general info.\n\n" +
-    "1) How long has this been going on?\n" +
-    "2) Any other symptoms (fever, shortness of breath, rash, vomiting, severe pain)?\n" +
-    "3) Any relevant history (conditions, meds, allergies)?\n\n" +
-    "If you share those, I’ll suggest common causes and what to watch for."
-  );
+  // await new Promise((r) => setTimeout(r, 650));
+  // return (
+  //   "Thanks — I can help with general info.\n\n" +
+  //   "1) How long has this been going on?\n" +
+  //   "2) Any other symptoms (fever, shortness of breath, rash, vomiting, severe pain)?\n" +
+  //   "3) Any relevant history (conditions, meds, allergies)?\n\n" +
+  //   "If you share those, I’ll suggest common causes and what to watch for."
+  // );
 }
 
 export default function App() {
