@@ -1,4 +1,5 @@
 import React, { useEffect, useMemo, useRef, useState } from "react";
+export const API_BASE = import.meta.env.VITE_API_BASE_URL;
 
 const BRAND = "MediChat";
 const STORAGE_THEME_KEY = "medichat_theme";
@@ -149,7 +150,7 @@ async function callChatApi({ message, thread }) {
 
   console.log("API call with message:", message);
   console.log("Thread:", thread);
-  const res = await fetch("http://127.0.0.1:5000/chat", {
+  const res = await fetch(`${API_BASE}/chat`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
