@@ -50,7 +50,7 @@ Now the frontend is running on port 5432 (change this if you want another port).
 
 Next, run the backend.
 
-### Run the backend
+#### Run the backend
 ```bash
 cd ../
 ```
