@@ -12,9 +12,13 @@ from src.prompt import *
 
 
 app = Flask(__name__)
-CORS(app)
 
 load_dotenv()
+
+allowed_origins = os.getenv("CORS_ORIGIN", "*")
+origins_list = [origin.strip() for origin in allowed_origins.split(",")] if allowed_origins else ["*"]
+
+CORS(app, origins=origins_list)
 
 PINECONE_API_KEY = os.getenv("PINECONE_API_KEY")
 HF_TOKEN = os.getenv("HF_TOKEN")
