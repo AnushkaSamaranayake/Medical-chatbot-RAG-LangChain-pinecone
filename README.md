@@ -6,8 +6,10 @@ This medical chatbot is RAG based chat system build upon the medical knowledge b
 - LangChain - Data orchestration
 - Pinecone - Vector Database
 
-mistralai/Mistral-7B-Instruct-v0.2 has been used as the text reasoning LLM of the chatbot. It's an open source LLM inferenced by OpenAI.
-sentence-transformers/all-MiniLM-L6-v2 is used as the vector embedding model.
+Following LLMs were used in this project as the encoder and the decoder.
+
+1. mistralai/Mistral-7B-Instruct-v0.2 has been used as the text reasoning LLM of the chatbot. It's an open source LLM inferenced by OpenAI.
+2. sentence-transformers/all-MiniLM-L6-v2 is used as the vector embedding model.
 
 Do the following steps to see the project.
 
